@@ -22,7 +22,7 @@ RUN ./configure --disable-install-rdoc --disable-install-ri \
 
 WORKDIR /tmp
 RUN gem install --no-rdoc --no-ri rails -v '4.2.1'
-RUN gem install --no-rdoc --no-ri pg -v '0.18.1' -- --with-pg_config=/usr/pgsql-9.4/bin/pg_config
+RUN gem install --no-rdoc --no-ri pg -v '0.17.1' -- --with-pg_config=/usr/pgsql-9.4/bin/pg_config
 RUN gem install therubyracer --no-ri --no-rdoc
 RUN gem install --no-rdoc --no-ri passenger -v '5.0.7'
 RUN passenger-install-nginx-module --auto
