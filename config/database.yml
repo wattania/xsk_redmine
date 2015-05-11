@@ -1,0 +1,27 @@
+# PostgreSQL configuration example
+#production:
+#  adapter: postgresql
+#  database: redmine
+#  host: localhost
+#  username: postgres
+#  password: "postgres"
+
+production:
+  adapter: postgresql
+  database: redmine
+  host: localhost
+  username: redmine
+  password: "redmine"
+
+# SQLite3 configuration example
+#production:
+#  adapter: sqlite3
+#  database: db/redmine.sqlite3
+
+# SQL Server configuration example
+#production:
+#  adapter: sqlserver
+#  database: redmine
+#  host: localhost
+#  username: jenkins
+#  password: jenkins
