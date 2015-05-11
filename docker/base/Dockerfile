@@ -1,5 +1,5 @@
 FROM centos:centos6.6
-MAINTAINER Wattana Inthaphong <wattaint@gmail.com>
+MAINTAINER Wattana Inthaphong <wti@g.xsidekick.com>
 # enable centos plus repo and install epel repo
 RUN rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm \
 && rpm -iUvh http://yum.postgresql.org/9.4/redhat/rhel-6-x86_64/pgdg-centos94-9.4-1.noarch.rpm \
@@ -8,7 +8,9 @@ RUN rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noa
 && yum install -y postgresql94 postgresql94-devel postgresql94-libs postgresql94-server \
 && yum install -y wget monit mlocate vim which tar \
 && yum install -y curl-devel pcre-devel \
-&& yum clean all
+&& yum install -y git \
+&& yum install -y ImageMagick* \
+|| yum clean all
 
 # RUBY ###########
 ADD ruby-2.2.2.tar.bz2 /tmp
@@ -18,6 +20,7 @@ RUN ./configure --disable-install-rdoc --disable-install-ri \
  && make install \
  && rm -rf /tmp/ruby-2.2.2
 
+WORKDIR /tmp
 RUN gem install --no-rdoc --no-ri rails -v '4.2.1'
 RUN gem install --no-rdoc --no-ri pg -v '0.18.1' -- --with-pg_config=/usr/pgsql-9.4/bin/pg_config
 RUN gem install therubyracer --no-ri --no-rdoc
