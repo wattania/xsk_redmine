@@ -27,4 +27,7 @@ RUN gem install therubyracer --no-ri --no-rdoc
 RUN gem install --no-rdoc --no-ri passenger -v '5.0.7'
 RUN passenger-install-nginx-module --auto
 
+ADD redmine-3.0.3.tar.gz /opt
+RUN chown root.root -R /opt/redmine-3.0.3
+
 WORKDIR /

@@ -18,7 +18,6 @@
 
 # DO NOT MODIFY THIS FILE !!!
 # Settings can be defined through the application in Admin -> Settings
-
 app_title:
   default: Redmine
 app_subtitle:
