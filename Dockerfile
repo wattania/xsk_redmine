@@ -19,5 +19,3 @@ RUN chmod +x /etc/init.d/nginx
 COPY config/postgresql/postgresql-9.4 /etc/init.d/postgresql-9.4
 RUN chmod +x /etc/init.d/postgresql-9.4
 
-
-
