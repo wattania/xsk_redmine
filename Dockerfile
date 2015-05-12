@@ -19,3 +19,6 @@ RUN chmod +x /etc/init.d/nginx
 COPY config/postgresql/postgresql-9.4 /etc/init.d/postgresql-9.4
 RUN chmod +x /etc/init.d/postgresql-9.4
 
+EXPOSE 5432
+EXPOSE 2812
+EXPOSE 80
